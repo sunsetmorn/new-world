@@ -1,6 +1,6 @@
 package go.to.enumtest;
 
-public class GrammarTest {
+public class EnumTest {
 
     /**
      *枚举类的创建1：直接创建
