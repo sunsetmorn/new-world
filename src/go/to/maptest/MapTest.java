@@ -1,4 +1,4 @@
-package go.to.enumtest;
+package go.to.maptest;
 
 import java.util.*;
 
@@ -68,15 +68,7 @@ public class MapTest {
             }
         });
         sortedMap.putAll(map3);
-        Iterator itr = sortedMap.entrySet().iterator();
-        while(itr.hasNext()) {
-            Map.Entry entry = (Map.Entry) itr.next();
-            // get key
-            Integer key = (Integer) entry.getKey();
-            // get value
-            String value = (String) entry.getValue();
-            System.out.println("key:"+key+",value:"+value);
-        }
+        ImmutableMap.output1(sortedMap);
 
         Map<Integer, Integer> map2 = new HashMap<>();
         map2.put(2, 2);
