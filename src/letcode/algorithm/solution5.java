@@ -1,4 +1,4 @@
-package letcode.algorithm.longestpalindrome;
+package letcode.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
