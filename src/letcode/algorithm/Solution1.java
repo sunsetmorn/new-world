@@ -1,4 +1,4 @@
-package letcode.algorithm.sumtwonum;
+package letcode.algorithm;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package letcode.algorithm.longestsubstring;
+package letcode.algorithm;
 
 import java.util.*;
 /**

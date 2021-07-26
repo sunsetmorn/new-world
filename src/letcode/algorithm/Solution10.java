@@ -1,0 +1,49 @@
+package letcode.algorithm;
+
+/**
+ * 实现基础正则字符"*","."
+ * '.' 匹配任意单个字符
+ * '*' 匹配零个或多个前面的那一个元素
+ * 所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。
+ */
+public class Solution10 {
+    /**
+     * 动态规划
+     */
+    public static boolean isMatch(String s, String p) {
+        if(s.isEmpty() && p.isEmpty()) return true;
+        if(s.equals(p)) return true;
+        if(p.isEmpty() && !s.isEmpty()) return false;
+        boolean[][] booleans = new boolean[s.length()+1][p.length()+1];
+        booleans[0][0] = true;
+        for (int i = 1; i < p.length()+1; i++) {
+            if (p.charAt(i - 1) == '*') {
+                booleans[0][i] = booleans[0][i - 2];
+            }
+        }
+        for(int i =1;i < s.length()+1;i++){
+            for(int j =1;j < p.length()+1;j++){
+                if(p.charAt(j - 1)== s.charAt(i - 1) || p.charAt(j - 1)== '.'){
+                    booleans[i][j] = booleans[i - 1][j - 1];
+                }else if(p.charAt(j - 1)=='*'){
+                    if(p.charAt(j - 2) == s.charAt(i - 1) || p.charAt(j - 2) == '.'){
+                        booleans[i][j] = booleans[i][j-1] || booleans[i][j - 2] || booleans[i - 1][j] ;
+                    }else{
+                        booleans[i][j] = booleans[i][j - 2];
+                    }
+                }else{
+                    booleans[s.length()][p.length()] = false;
+                }
+            }
+        }
+        return booleans[s.length()][p.length()];
+    }
+
+    public static void main(String[] args) {
+        String a ="";
+        String b = ".*";
+//        String b = a.substring(1,3); //[)
+//        System.out.println(b);
+        System.out.println(isMatch(a,b));
+    }
+}
