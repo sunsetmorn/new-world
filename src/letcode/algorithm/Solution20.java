@@ -6,16 +6,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ÓĞĞ§µÄÀ¨ºÅ
- * ¸ø¶¨Ò»¸öÖ»°üÀ¨ '('£¬')'£¬'{'£¬'}'£¬'['£¬']'?µÄ×Ö·û´® s £¬ÅĞ¶Ï×Ö·û´®ÊÇ·ñÓĞĞ§¡£
- * ÓĞĞ§×Ö·û´®ĞèÂú×ã£º
- * 1.×óÀ¨ºÅ±ØĞëÓÃÏàÍ¬ÀàĞÍµÄÓÒÀ¨ºÅ±ÕºÏ¡£
- * 2.×óÀ¨ºÅ±ØĞëÒÔÕıÈ·µÄË³Ğò±ÕºÏ¡£
+ * æœ‰æ•ˆçš„æ‹¬å·
+ * ç»™å®šä¸€ä¸ªåªåŒ…æ‹¬ '('ï¼Œ')'ï¼Œ'{'ï¼Œ'}'ï¼Œ'['ï¼Œ']'?çš„å­—ç¬¦ä¸² s ï¼Œåˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦æœ‰æ•ˆã€‚
+ * æœ‰æ•ˆå­—ç¬¦ä¸²éœ€æ»¡è¶³ï¼š
+ * 1.å·¦æ‹¬å·å¿…é¡»ç”¨ç›¸åŒç±»å‹çš„å³æ‹¬å·é—­åˆã€‚
+ * 2.å·¦æ‹¬å·å¿…é¡»ä»¥æ­£ç¡®çš„é¡ºåºé—­åˆã€‚
  */
 public class Solution20 {
     /**
-     * Ö´ĞĞÓÃÊ±£º2 ms, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË73.40%µÄÓÃ»§
-     * ÄÚ´æÏûºÄ£º36.1 MB, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË97.79%µÄÓÃ»§
+     * æ‰§è¡Œç”¨æ—¶ï¼š2 ms, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†73.40%çš„ç”¨æˆ·
+     * å†…å­˜æ¶ˆè€—ï¼š36.1 MB, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†97.79%çš„ç”¨æˆ·
      */
     public static boolean isValid(String s) {
         Stack mid = new Stack();
@@ -50,7 +50,7 @@ public class Solution20 {
     }
 
     /**
-     * ¿ÉÀ©Õ¹ĞÔËã·¨
+     * å¯æ‰©å±•æ€§ç®—æ³•
      *
      */
     public static boolean isValid1(String s){
@@ -84,23 +84,23 @@ public class Solution20 {
     static class Stack {
         List<Integer> list = new ArrayList<Integer>();
         int index = 0;
-        //ÈëÕ»
+        //å…¥æ ˆ
         public void push(int n){
             list.add(n);
             index++;
         }
-        //³öÕ»
+        //å‡ºæ ˆ
         public void pop(){
             if(!list.isEmpty()){
                 index--;
                 list.remove(index);
             }
         }
-        //È¡Õ»¶¥ÔªËØ
+        //å–æ ˆé¡¶å…ƒç´ 
         public int get(){
             return list.get(index-1);
         }
-        //ÊÇ·ñÎª¿Õ
+        //æ˜¯å¦ä¸ºç©º
         public boolean empty(){
            return index == 0;
         }

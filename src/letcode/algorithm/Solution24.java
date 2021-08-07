@@ -3,14 +3,14 @@ package letcode.algorithm;
 import letcode.commen.ListNode;
 
 /**
- * �������������еĽڵ�
- * ����һ�����������������������ڵĽڵ㣬�����ؽ������������
- * �㲻��ֻ�ǵ����ĸı�ڵ��ڲ���ֵ��������Ҫʵ�ʵĽ��нڵ㽻����
+ * 两两交换链表中的节点
+ * 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
+ * 你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
  */
 public class Solution24 {
     /**
-     * ִ����ʱ��0 ms, ������ Java �ύ�л�����100.00%���û�
-     * �ڴ����ģ�36 MB, ������ Java �ύ�л�����60.50%���û�
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：36 MB, 在所有 Java 提交中击败了60.50%的用户
      */
     public static ListNode swapPairs(ListNode head) {
         if(head==null) return null;

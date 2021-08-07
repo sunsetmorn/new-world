@@ -5,13 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * ËÄÊıÖ®ºÍ
+ * å››æ•°ä¹‹å’Œ
  */
 public class Solution18 {
 
     /**
-     * Ö´ĞĞÓÃÊ±£º4 ms, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË88.74%µÄÓÃ»§
-     * ÄÚ´æÏûºÄ£º38.8 MB, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË55.84%µÄÓÃ»§
+     * æ‰§è¡Œç”¨æ—¶ï¼š4 ms, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†88.74%çš„ç”¨æˆ·
+     * å†…å­˜æ¶ˆè€—ï¼š38.8 MB, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†55.84%çš„ç”¨æˆ·
      */
     public static List<List<Integer>> fourSum(int[] nums, int target) {
         Arrays.sort(nums);

@@ -3,14 +3,14 @@ package letcode.algorithm;
 import letcode.commen.ListNode;
 
 /**
- * ºÏ²¢Á½¸öÓÐÐòÁ´±í
- * ½«Á½¸öÉýÐòÁ´±íºÏ²¢ÎªÒ»¸öÐÂµÄ ÉýÐò Á´±í²¢·µ»Ø¡£ÐÂÁ´±íÊÇÍ¨¹ýÆ´½Ó¸ø¶¨µÄÁ½¸öÁ´±íµÄËùÓÐ½Úµã×é³ÉµÄ¡£
+ * åˆå¹¶ä¸¤ä¸ªæœ‰åºé“¾è¡¨
+ * å°†ä¸¤ä¸ªå‡åºé“¾è¡¨åˆå¹¶ä¸ºä¸€ä¸ªæ–°çš„ å‡åº é“¾è¡¨å¹¶è¿”å›žã€‚æ–°é“¾è¡¨æ˜¯é€šè¿‡æ‹¼æŽ¥ç»™å®šçš„ä¸¤ä¸ªé“¾è¡¨çš„æ‰€æœ‰èŠ‚ç‚¹ç»„æˆçš„ã€‚
  */
 public class Solution21 {
 
     /**
-     * Ö´ÐÐÓÃÊ±£º0 ms, ÔÚËùÓÐ Java Ìá½»ÖÐ»÷°ÜÁË100.00%µÄÓÃ»§
-     * ÄÚ´æÏûºÄ£º37.8 MB, ÔÚËùÓÐ Java Ìá½»ÖÐ»÷°ÜÁË52.02%µÄÓÃ»§
+     * æ‰§è¡Œç”¨æ—¶ï¼š0 ms, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†100.00%çš„ç”¨æˆ·
+     * å†…å­˜æ¶ˆè€—ï¼š37.8 MB, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†52.02%çš„ç”¨æˆ·
      */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);

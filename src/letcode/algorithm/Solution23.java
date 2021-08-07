@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ºÏ²¢K¸öÉıĞòÁ´±í
- * ¸øÄãÒ»¸öÁ´±íÊı×é£¬Ã¿¸öÁ´±í¶¼ÒÑ¾­°´ÉıĞòÅÅÁĞ¡£
- * ÇëÄã½«ËùÓĞÁ´±íºÏ²¢µ½Ò»¸öÉıĞòÁ´±íÖĞ£¬·µ»ØºÏ²¢ºóµÄÁ´±í¡£
+ * åˆå¹¶Kä¸ªå‡åºé“¾è¡¨
+ * ç»™ä½ ä¸€ä¸ªé“¾è¡¨æ•°ç»„ï¼Œæ¯ä¸ªé“¾è¡¨éƒ½å·²ç»æŒ‰å‡åºæ’åˆ—ã€‚
+ * è¯·ä½ å°†æ‰€æœ‰é“¾è¡¨åˆå¹¶åˆ°ä¸€ä¸ªå‡åºé“¾è¡¨ä¸­ï¼Œè¿”å›åˆå¹¶åçš„é“¾è¡¨ã€‚
  */
 public class Solution23 {
     /**
-     * leetcode×î¿ì´¦Àí·½·¨
+     * leetcodeæœ€å¿«å¤„ç†æ–¹æ³•
      */
     public static ListNode mergeKLists(ListNode[] lists) {
         if(lists == null || lists.length == 0) {
@@ -21,20 +21,20 @@ public class Solution23 {
         return merge(lists, 0, lists.length - 1);
     }
 
-    //¶ş·Ö·¨
+    //äºŒåˆ†æ³•
     private static ListNode merge(ListNode[] lists, int left, int right) {
         if(left == right) {
             return lists[left];
         }
         int mid = (right - left)/2 + left;
-        //½«lists·Ö³ÉÁ½²¿·Ö£¬·Ö±ğ°Ñ×óÓÒÁ½²¿·ÖÏÈºÏ²¢ºÃ£¬È»ºóÔÙ°´ÕÕºÏ²¢Á½¸öÉıĞòÁ´±íÀ´µÃµ½×îºóµÄ½á¹û
+        //å°†listsåˆ†æˆä¸¤éƒ¨åˆ†ï¼Œåˆ†åˆ«æŠŠå·¦å³ä¸¤éƒ¨åˆ†å…ˆåˆå¹¶å¥½ï¼Œç„¶åå†æŒ‰ç…§åˆå¹¶ä¸¤ä¸ªå‡åºé“¾è¡¨æ¥å¾—åˆ°æœ€åçš„ç»“æœ
         return mergeTwoLists(merge(lists, left, mid), merge(lists, mid + 1, right));
     }
 
     /**
-     * Ê¹ÓÃËùÓĞÊı×ÖÌáÈ¡£¬ÅÅĞòºóĞÂ½¨µÄ·½·¨
-     * Ö´ĞĞÓÃÊ±£º8 ms, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË37.22%µÄÓÃ»§
-     * ÄÚ´æÏûºÄ£º39.7 MB, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË90.14%µÄÓÃ»§
+     * ä½¿ç”¨æ‰€æœ‰æ•°å­—æå–ï¼Œæ’åºåæ–°å»ºçš„æ–¹æ³•
+     * æ‰§è¡Œç”¨æ—¶ï¼š8 ms, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†37.22%çš„ç”¨æˆ·
+     * å†…å­˜æ¶ˆè€—ï¼š39.7 MB, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†90.14%çš„ç”¨æˆ·
      */
     public static ListNode mergeKLists2(ListNode[] lists) {
         if(lists.length ==0) return null;
@@ -63,9 +63,9 @@ public class Solution23 {
 
 
     /**
-     * Ê¹ÓÃÁ½Á½Ïà¼ÓµÄ·½·¨
-     * Ö´ĞĞÓÃÊ±£º108 ms, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË26.75%µÄÓÃ»§
-     * ÄÚ´æÏûºÄ£º40.2 MB, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË37.48%µÄÓÃ»§
+     * ä½¿ç”¨ä¸¤ä¸¤ç›¸åŠ çš„æ–¹æ³•
+     * æ‰§è¡Œç”¨æ—¶ï¼š108 ms, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†26.75%çš„ç”¨æˆ·
+     * å†…å­˜æ¶ˆè€—ï¼š40.2 MB, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†37.48%çš„ç”¨æˆ·
      */
     public static ListNode mergeKLists1(ListNode[] lists) {
         if(lists.length ==0 ) return null;

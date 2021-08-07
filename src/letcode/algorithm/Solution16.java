@@ -3,12 +3,12 @@ package letcode.algorithm;
 import java.util.Arrays;
 
 /**
- * ×î½Ó½üµÄÈıÊıÖ®ºÍ
+ * æœ€æ¥è¿‘çš„ä¸‰æ•°ä¹‹å’Œ
  */
 public class Solution16 {
     /**
-     * Ö´ĞĞÓÃÊ±£º6 ms, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË72.44%µÄÓÃ»§
-     * ÄÚ´æÏûºÄ£º7.7 MB, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË96.63%µÄÓÃ»§
+     * æ‰§è¡Œç”¨æ—¶ï¼š6 ms, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†72.44%çš„ç”¨æˆ·
+     * å†…å­˜æ¶ˆè€—ï¼š7.7 MB, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†96.63%çš„ç”¨æˆ·
      */
     public static int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);

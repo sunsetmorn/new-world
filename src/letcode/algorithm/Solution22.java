@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * À¨ºÅÉú³É
- * Êı×Ön´ú±íÉú³ÉÀ¨ºÅµÄ¶ÔÊı£¬ÇëÄãÉè¼ÆÒ»¸öº¯Êı£¬ÓÃÓÚÄÜ¹»Éú³ÉËùÓĞ¿ÉÄÜµÄ²¢ÇÒÓĞĞ§µÄÀ¨ºÅ×éºÏ¡£
+ * æ‹¬å·ç”Ÿæˆ
+ * æ•°å­—nä»£è¡¨ç”Ÿæˆæ‹¬å·çš„å¯¹æ•°ï¼Œè¯·ä½ è®¾è®¡ä¸€ä¸ªå‡½æ•°ï¼Œç”¨äºèƒ½å¤Ÿç”Ÿæˆæ‰€æœ‰å¯èƒ½çš„å¹¶ä¸”æœ‰æ•ˆçš„æ‹¬å·ç»„åˆã€‚
  */
 public class Solution22 {
     /**
-     * Ö´ĞĞÓÃÊ±£º46 ms, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË5.11%µÄÓÃ»§
-     * ÄÚ´æÏûºÄ£º38.6 MB, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË41.80%µÄÓÃ»§
+     * æ‰§è¡Œç”¨æ—¶ï¼š46 ms, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†5.11%çš„ç”¨æˆ·
+     * å†…å­˜æ¶ˆè€—ï¼š38.6 MB, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†41.80%çš„ç”¨æˆ·
      */
     public static List<String> generateParenthesis(int n) {
         List<String> ret = new ArrayList<>();
@@ -38,7 +38,7 @@ public class Solution22 {
     }
 
     /**
-     *  leetcode×î¶ÌÊ±¼äËã·¨
+     *  leetcodeæœ€çŸ­æ—¶é—´ç®—æ³•
      */
     public List<String> generateParenthesis1(int n) {
         List<String> resultList = new ArrayList<>();
@@ -55,12 +55,12 @@ public class Solution22 {
         if (left < n) {
             current.append('(');
             backtrack(current, left + 1, right, n, resultList);
-            current.deleteCharAt(current.length() - 1); //È¥³ı×Ö·û´®ºó·½µÄËùÓĞ")"ºó£¬È¥³ı×îºóÒ»¸ö"("
+            current.deleteCharAt(current.length() - 1); //å»é™¤å­—ç¬¦ä¸²åæ–¹çš„æ‰€æœ‰")"åï¼Œå»é™¤æœ€åä¸€ä¸ª"("
         }
         if(right < left) {
-            current.append(')'); //È¥³ı×Ö·û´®ºó·½µÄËùÓĞ")"ºó£¬È¥³ı×îºóÒ»¸ö"("ºó£¬Ìí¼ÓÒ»¸ö")"
+            current.append(')'); //å»é™¤å­—ç¬¦ä¸²åæ–¹çš„æ‰€æœ‰")"åï¼Œå»é™¤æœ€åä¸€ä¸ª"("åï¼Œæ·»åŠ ä¸€ä¸ª")"
             backtrack(current, left, right + 1, n, resultList);
-            current.deleteCharAt(current.length() - 1);  //È¥³ı×Ö·û´®ºó·½µÄËùÓĞ")"
+            current.deleteCharAt(current.length() - 1);  //å»é™¤å­—ç¬¦ä¸²åæ–¹çš„æ‰€æœ‰")"
         }
     }
 

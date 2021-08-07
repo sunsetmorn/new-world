@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * µç»°ºÅÂëµÄ×ÖÄ¸×éºÏ
+ * ç”µè¯å·ç çš„å­—æ¯ç»„åˆ
  */
 public class Solution17 {
     /**
-     * Ö´ĞĞÓÃÊ±£º0 ms, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË100.00%µÄÓÃ»§
-     * ÄÚ´æÏûºÄ£º38.3 MB, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË30.13%µÄÓÃ»§
+     * æ‰§è¡Œç”¨æ—¶ï¼š0 ms, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†100.00%çš„ç”¨æˆ·
+     * å†…å­˜æ¶ˆè€—ï¼š38.3 MB, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†30.13%çš„ç”¨æˆ·
      */
     public static List<String> letterCombinations(String digits) {
         List<String> ret = new ArrayList<>();
@@ -51,8 +51,8 @@ public class Solution17 {
     }
 
     /**
-     * Ö´ĞĞÓÃÊ±£º1 ms, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË79.05%µÄÓÃ»§
-     * ÄÚ´æÏûºÄ£º38.6 MB, ÔÚËùÓĞ Java Ìá½»ÖĞ»÷°ÜÁË21.18%µÄÓÃ»§
+     * æ‰§è¡Œç”¨æ—¶ï¼š1 ms, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†79.05%çš„ç”¨æˆ·
+     * å†…å­˜æ¶ˆè€—ï¼š38.6 MB, åœ¨æ‰€æœ‰ Java æäº¤ä¸­å‡»è´¥äº†21.18%çš„ç”¨æˆ·
      */
     public static List<String> letterCombinations1(String digits) {
         List<String> ret = new ArrayList<>();
