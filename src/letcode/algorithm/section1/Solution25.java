@@ -1,4 +1,4 @@
-package letcode.algorithm;
+package letcode.algorithm.section1;
 
 import letcode.commen.ListNode;
 
@@ -15,8 +15,47 @@ import java.util.List;
  * 你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
  */
 public class Solution25 {
+    /**
+     * leetcode最短时间算法
+     */
+    public static ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null || head.next == null) return head;
+        ListNode dummy = new ListNode(0, head);
+        ListNode pre = dummy;
+        ListNode end = dummy;
+        while (end.next != null) {
+            for (int i = 0; i < k && end != null; i++) end = end.next; //end到第K个节点
+            if (end == null) break;
+            ListNode next = end.next; //保存k个节点的下一下
+            end.next = null; //从第k个节点截断链表
+            ListNode start = pre.next; //取k个节点的链表
+            pre.next = reverse(start); //反转k个节点的链表并接在返回链表后面
+            start.next = next; //为下次循环准备
+            pre = start;
+            end = start;
+        }
+        return dummy.next;
+    }
 
-    public static ListNode reverseKGroup(ListNode head, int k){
+    public static ListNode reverse(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode pre = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = next;
+        }
+        return pre;
+    }
+
+    /**
+     * 执行用时：2 ms, 在所有 Java 提交中击败了7.26%的用户
+     * 内存消耗：38.5 MB, 在所有 Java 提交中击败了74.56%的用户
+     * 用链表保存所有节点，然后直接按序取节点串联
+     */
+    public static ListNode reverseKGroup3(ListNode head, int k){
         ListNode pointer = head;
         List<ListNode> li = new ArrayList<>();
         while(pointer!=null){
@@ -28,15 +67,30 @@ public class Solution25 {
         }else if(li.size() < k){
             return head;
         }
+        ListNode ret = new ListNode();
+        pointer = ret;
         for(int i=0;i<li.size()/k;i++){
-            
+            for(int j=0;j<k;j++){
+                pointer.next = li.get((i+1)*k-j-1);
+                pointer = pointer.next;
+            }
         }
-
+        int t = li.size()%k;
+        if(t==0){
+            pointer.next = null;
+        }else{
+            for(int i=0;i<t;i++){
+                pointer.next = li.get(li.size()-t+i);
+                pointer = pointer.next;
+            }
+        }
+        return ret.next;
     }
 
     /**
      * 执行用时：1 ms, 在所有 Java 提交中击败了29.84%的用户
      * 内存消耗：38.7 MB, 在所有 Java 提交中击败了41.57%的用户
+     * 按次翻转k个接点
      */
     public static ListNode reverseKGroup1(ListNode head, int k) {
         int len = 0;
@@ -78,11 +132,11 @@ public class Solution25 {
         ListNode b = new ListNode(5,a);
         ListNode c = new ListNode(4,b);
         ListNode d = new ListNode(3,c);
-        ListNode e = new ListNode(2,d);
+        ListNode e = new ListNode(2);
         ListNode f = new ListNode(1,e);
         ListNode g = null;
 
-        ListNode aa = reverseKGroup(g,3);
+        ListNode aa = reverseKGroup(f,2);
         System.out.println(aa);
     }
 }

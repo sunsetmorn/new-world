@@ -1,4 +1,4 @@
-package letcode.algorithm;
+package letcode.algorithm.section1;
 /**
  * 取字符中前部分的整数
  * 类似与c和c++中的Atoi这个函数

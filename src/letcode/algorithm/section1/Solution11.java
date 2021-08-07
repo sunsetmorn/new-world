@@ -1,4 +1,4 @@
-package letcode.algorithm;
+package letcode.algorithm.section1;
 
 public class Solution11 {
     public static int maxArea(int[] height) {

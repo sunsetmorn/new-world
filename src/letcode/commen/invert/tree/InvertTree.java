@@ -1,4 +1,4 @@
-package letcode.algorithm.invert.tree;
+package letcode.commen.invert.tree;
 
 import letcode.commen.TreeNode;
 

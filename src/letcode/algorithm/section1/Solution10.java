@@ -1,4 +1,4 @@
-package letcode.algorithm;
+package letcode.algorithm.section1;
 
 /**
  * 实现基础正则字符"*","."

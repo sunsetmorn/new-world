@@ -1,4 +1,4 @@
-package letcode.algorithm;
+package letcode.algorithm.section1;
 
 import java.util.HashMap;
 import java.util.Map;
