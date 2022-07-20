@@ -18,18 +18,18 @@ public class Solution39 {
 
         List<List<Integer>> retList = new ArrayList();
         List<Integer> start = new ArrayList<>();
-        addSum(candidates,target,start,0,retList,0);
+        addSum(candidates,target,start,retList,0);
         return retList;
     }
 
-    public static void addSum(int[] candidates, int target, List<Integer> ints,int sum,List<List<Integer>> retList,int flag){
+    public static void addSum(int[] candidates, int remains, List<Integer> ints,List<List<Integer>> retList,int flag){
         for(int i = flag; i < candidates.length;i++){
-            if(sum + candidates[i] < target){
+            if(candidates[i] < remains){
                 List<Integer> tmp = new ArrayList<>();
                 tmp.addAll(ints);
                 tmp.add(candidates[i]);
-                addSum(candidates,target,tmp,sum + candidates[i],retList,i);
-            }else if (sum + candidates[i] == target){
+                addSum(candidates,remains-candidates[i],tmp,retList,i);
+            }else if (candidates[i] == remains){
                 ints.add(candidates[i]);
                 List<Integer> tmp = new ArrayList<>();
                 tmp.addAll(ints);
@@ -48,6 +48,10 @@ public class Solution39 {
         System.out.println();
     }
 
+    /**
+     * leetcode最快方案
+     * 比上面方案优化过
+     */
     class leetCode{
         List<List<Integer>> res;
         public List<List<Integer>> combinationSum(int[] candidates, int target) {
@@ -63,12 +67,10 @@ public class Solution39 {
             }
 
             for (int i = start;i < candidates.length;i++) {
-                if (candidates[i] > remains)
-                    return;
+                if (candidates[i] > remains)  return;
                 path.add(candidates[i]);
                 backtrack(candidates,remains - candidates[i],path,i);
                 path.remove(path.size() - 1);
-
             }
 
         }
