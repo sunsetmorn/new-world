@@ -1,26 +1,40 @@
-package leetcode.algorithm.section2;
 
+package leetcode.algorithm.section2;
 /**
- * 给定一个字符串 (s) 和一个字符模式 (p) ，实现一个支持 '?' 和 '*' 的通配符匹配。
- * '?' 可以匹配任何单个字符。
- * '*' 可以匹配任意字符串（包括空字符串）。
+ * 缁欏畾涓や釜浠ュ瓧绗︿覆褰㈠紡琛ㄧず鐨勯潪璐熸暣鏁奥爊um1聽鍜屄爊um2锛岃繑鍥灺爊um1聽鍜屄爊um2聽鐨勪箻绉紝瀹冧滑鐨勪箻绉篃琛ㄧず涓哄瓧绗︿覆褰㈠紡銆?
+ * 娉ㄦ剰锛氫笉鑳戒娇鐢ㄤ换浣曞唴缃殑 BigInteger 搴撴垨鐩存帴灏嗚緭鍏ヨ浆鎹负鏁存暟銆?
  *
- * 两个字符串完全匹配才算匹配成功。
- * 说明:
- * s可能为空，且只包含从a-z的小写字母。
- * p可能为空，且只包含从a-z的小写字母，以及字符?和*。
- *
+ * 1 <= num1.length, num2.length <= 200
+ * num1聽鍜? num2聽鍙兘鐢辨暟瀛楃粍鎴愩??
+ * num1聽鍜? num2聽閮戒笉鍖呭惈浠讳綍鍓嶅闆讹紝闄や簡鏁板瓧0鏈韩銆?
  */
 public class Solution43 {
-    public boolean isMatch(String s, String p) {
-        if(s.isEmpty() && p.isEmpty()) return true;
-        if(s.equals(p)) return true;
-        if(p.isEmpty() && !s.isEmpty()) return false;
-        boolean[][] booleans = new boolean[s.length()+1][p.length()+1];
-        booleans[0][0] = true;
+    public static String multiply(String num1, String num2) {
+        if(num1.length() == 0 || num2.length() == 0) return null;
+        if("0".equals(num1) || "0".equals(num2)) return "0";
+        char[] chars1 = num1.toCharArray();
+        char[] chars2 = num2.toCharArray();
+        char[] chars = new char[chars1.length + chars2.length];
+        int[] ints = new int[chars.length];
+        for(int i = 0 ; i < chars1.length ; i++){
+            for(int j = 0; j < chars2.length ; j++){
+                ints[i+j+1] += (chars1[i]-48) * (chars2[j]-48);
+            }
+        }
+        for(int i = ints.length -1 ; i >= 0 ; i-- ){
+            chars[i] = String.valueOf(ints[i] % 10).toCharArray()[0];
+            if(i != 0){
+                ints[i-1] += ints[i] / 10 ;
+            }
+        }
+        return chars[0] == '0' ? String.valueOf(chars,1,chars.length-1) : String.valueOf(chars).trim();
+    }
 
-
-
-        return false;
+    public static void main(String[] args) {
+        String a = "896515113";
+        String b = "456";
+        System.out.println(0*456);
+        String multiply = multiply(a, b);
+        System.out.println(multiply);
     }
 }
