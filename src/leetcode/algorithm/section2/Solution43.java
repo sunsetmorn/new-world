@@ -1,12 +1,12 @@
 
 package leetcode.algorithm.section2;
 /**
- * 缁欏畾涓や釜浠ュ瓧绗︿覆褰㈠紡琛ㄧず鐨勯潪璐熸暣鏁奥爊um1聽鍜屄爊um2锛岃繑鍥灺爊um1聽鍜屄爊um2聽鐨勪箻绉紝瀹冧滑鐨勪箻绉篃琛ㄧず涓哄瓧绗︿覆褰㈠紡銆?
- * 娉ㄦ剰锛氫笉鑳戒娇鐢ㄤ换浣曞唴缃殑 BigInteger 搴撴垨鐩存帴灏嗚緭鍏ヨ浆鎹负鏁存暟銆?
+ * 给定两个以字符串形式表示的非负整数?num1?和?num2，返回?num1?和?num2?的乘积，它们的乘积也表示为字符串形式??
+ * 注意：不能使用任何内置的 BigInteger 库或直接将输入转换为整数??
  *
  * 1 <= num1.length, num2.length <= 200
- * num1聽鍜? num2聽鍙兘鐢辨暟瀛楃粍鎴愩??
- * num1聽鍜? num2聽閮戒笉鍖呭惈浠讳綍鍓嶅闆讹紝闄や簡鏁板瓧0鏈韩銆?
+ * num1??? num2?只能由数字组成???
+ * num1??? num2?都不包含任何前导零，除了数字0本身??
  */
 public class Solution43 {
     public static String multiply(String num1, String num2) {
