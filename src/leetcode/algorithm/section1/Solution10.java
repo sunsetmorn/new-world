@@ -5,10 +5,14 @@ package leetcode.algorithm.section1;
  * '.' 匹配任意单个字符
  * '*' 匹配零个或多个前面的那一个元素
  * 所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。
+ *
+ * a* 可以表述0个a，即*可以表示-1个a。
  */
 public class Solution10 {
     /**
      * 动态规划
+     * 设置二维布尔数组表示s、p的字符串的匹配度。booleans[i+1][j+1]表示s的前i位和p的前j位是否匹配。
+     *
      */
     public static boolean isMatch(String s, String p) {
         if(s.isEmpty() && p.isEmpty()) return true;
