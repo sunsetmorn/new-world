@@ -1,6 +1,6 @@
 package leetcode.algorithm.section1;
 
-import leetcode.commen.ListNode;
+import leetcode.common.ListNode;
 
 /**
  * 合并两个有序链表

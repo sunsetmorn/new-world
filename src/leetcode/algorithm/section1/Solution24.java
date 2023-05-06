@@ -1,6 +1,6 @@
 package leetcode.algorithm.section1;
 
-import leetcode.commen.ListNode;
+import leetcode.common.ListNode;
 
 /**
  * 两两交换链表中的节点

@@ -1,6 +1,6 @@
 package leetcode.algorithm.section1;
 
-import leetcode.commen.ListNode;
+import leetcode.common.ListNode;
 
 /**
  * 删除链表的倒数第 N 个结点

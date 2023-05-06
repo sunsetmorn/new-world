@@ -1,6 +1,6 @@
-package leetcode.commen.invert.tree;
+package leetcode.common.invert.tree;
 
-import leetcode.commen.TreeNode;
+import leetcode.common.TreeNode;
 
 public class InvertTree {
 

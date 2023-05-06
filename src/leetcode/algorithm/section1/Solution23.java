@@ -1,6 +1,6 @@
 package leetcode.algorithm.section1;
 
-import leetcode.commen.ListNode;
+import leetcode.common.ListNode;
 
 import java.util.ArrayList;
 import java.util.List;
