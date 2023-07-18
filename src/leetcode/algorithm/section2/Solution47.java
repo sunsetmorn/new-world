@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ¸ø¶¨Ò»¸ö¿É°üº¬ÖØ¸´Êı×ÖµÄĞòÁĞnums£¬°´ÈÎÒâË³Ğò·µ»ØËùÓĞ²»ÖØ¸´µÄÈ«ÅÅÁĞ¡£
+ * ç»™å®šä¸€ä¸ªå¯åŒ…å«é‡å¤æ•°å­—çš„åºåˆ—numsï¼ŒæŒ‰ä»»æ„é¡ºåºè¿”å›æ‰€æœ‰ä¸é‡å¤çš„å…¨æ’åˆ—ã€‚
  */
 public class Solution47 {
 
     public static List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         if (nums == null || nums.length == 0) return result;
-        // ´ÓµÚ 0 ²ã¿ªÊ¼ËÑË÷
+        // ä»ç¬¬ 0 å±‚å¼€å§‹æœç´¢
         dfs(0, nums, result);
         return result;
     }
-    /** ËÑË÷µÚ level ²ã */
+    /** æœç´¢ç¬¬ level å±‚ */
     private static void dfs(int level, int[] nums, List<List<Integer>> results) {
         if (level == nums.length) {
-            // ¼ÇÂ¼½á¹û
+            // è®°å½•ç»“æœ
             List<Integer> result = new ArrayList<>();
             for (int num : nums) {
                 result.add(num);
@@ -28,21 +28,21 @@ public class Solution47 {
         }
         for (int i = level; i < nums.length; i++) {
             if (isRepeat(nums, level, i)) continue;
-            // ½»»»ºóÃæµÄÔªËØ
+            // äº¤æ¢åé¢çš„å…ƒç´ 
             swap(nums, level, i);
-            // ÍùÏÂÃæ×ê
+            // å¾€ä¸‹é¢é’»
             dfs(level + 1, nums, results);
-            // »¹Ô­ÏÖ³¡
+            // è¿˜åŸç°åœº
             swap(nums, i, level);
         }
     }
-    /** ½»»» i1 ºÍ i2 Î»ÖÃµÄÔªËØ */
+    /** äº¤æ¢ i1 å’Œ i2 ä½ç½®çš„å…ƒç´  */
     private static void swap(int[] nums, int i1, int i2) {
         int temp = nums[i1];
         nums[i1] = nums[i2];
         nums[i2] = temp;
     }
-    /** ¼ì²é willSwap ÄÚÊÇ·ñÓĞÖØ¸´µÄÔªËØ */
+    /** æ£€æŸ¥ willSwap å†…æ˜¯å¦æœ‰é‡å¤çš„å…ƒç´  */
     private static boolean isRepeat(int[] nums, int level, int willSwap) {
         for (int i = level; i < willSwap; i++) {
             if (nums[willSwap] == nums[i]) return true;

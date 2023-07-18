@@ -1,7 +1,7 @@
 package leetcode.algorithm.section2;
 
 /**
- * ����n���Ǹ�������ʾÿ������Ϊ1�����ӵĸ߶�ͼ�����㰴�����е����ӣ�����֮���ܽӶ�����ˮ��
+ * 给定n个非负整数表示每个宽度为1的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
  */
 public class Solution42 {
     public static int trap(int[] height) {
@@ -41,8 +41,8 @@ public class Solution42 {
 
 
     /**
-     * leetcode���ʱ���㷨
-     * ȡ���ֵ�㣬���߷ֱ������������ˮ�������ӡ�
+     * leetcode最短时间算法
+     * 取最大值点，两边分别向逐个点计算积水量最后相加。
      * @param height
      * @return
      */

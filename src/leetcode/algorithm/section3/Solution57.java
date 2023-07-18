@@ -1,14 +1,14 @@
 package leetcode.algorithm.section3;
 
 /**
- * ¸øÄãÒ»¸öÎÞÖØµþµÄ£¬°´ÕÕÇø¼äÆðÊ¼¶ËµãÅÅÐòµÄÇø¼äÁÐ±í¡£
- * ÔÚÁÐ±íÖÐ²åÈëÒ»¸öÐÂµÄÇø¼ä£¬ÄãÐèÒªÈ·±£ÁÐ±íÖÐµÄÇø¼äÈÔÈ»ÓÐÐòÇÒ²»ÖØµþ£¨Èç¹ûÓÐ±ØÒªµÄ»°£¬¿ÉÒÔºÏ²¢Çø¼ä£©¡£
+ * ç»™ä½ ä¸€ä¸ªæ— é‡å çš„ï¼ŒæŒ‰ç…§åŒºé—´èµ·å§‹ç«¯ç‚¹æŽ’åºçš„åŒºé—´åˆ—è¡¨ã€‚
+ * åœ¨åˆ—è¡¨ä¸­æ’å…¥ä¸€ä¸ªæ–°çš„åŒºé—´ï¼Œä½ éœ€è¦ç¡®ä¿åˆ—è¡¨ä¸­çš„åŒºé—´ä»ç„¶æœ‰åºä¸”ä¸é‡å ï¼ˆå¦‚æžœæœ‰å¿…è¦çš„è¯ï¼Œå¯ä»¥åˆå¹¶åŒºé—´ï¼‰ã€‚
  *
- * ÌáÊ¾£º
+ * æç¤ºï¼š
  * 0 <= intervals.length <= 10000
  * intervals[i].length == 2
  * 0 <= intervals[i][0] <= intervals[i][1] <= 100000
- * intervals ¸ù¾Ý intervals[i][0] °´ÉýÐòÅÅÁÐ
+ * intervals æ ¹æ® intervals[i][0] æŒ‰å‡åºæŽ’åˆ—
  * newInterval.length == 2
  * 0 <= newInterval[0] <= newInterval[1] <= 100000
  */

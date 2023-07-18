@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ¸ø¶¨Ò»¸ö²»º¬ÖØ¸´Êı×ÖµÄÊı×é nums £¬·µ»ØÆäËùÓĞ¿ÉÄÜµÄÈ«ÅÅÁĞ¡£Äã¿ÉÒÔ°´ÈÎÒâË³Ğò·µ»Ø´ğ°¸¡£
+ * ç»™å®šä¸€ä¸ªä¸å«é‡å¤æ•°å­—çš„æ•°ç»„ nums ï¼Œè¿”å›å…¶æ‰€æœ‰å¯èƒ½çš„å…¨æ’åˆ—ã€‚ä½ å¯ä»¥æŒ‰ä»»æ„é¡ºåºè¿”å›ç­”æ¡ˆã€‚
  *
- * ÌáÊ¾£º
+ * æç¤ºï¼š
  * 1 <= nums.length <= 6
  * -10 <= nums[i] <= 10
- * nums ÖĞµÄËùÓĞÕûÊı »¥²»ÏàÍ¬
+ * nums ä¸­çš„æ‰€æœ‰æ•´æ•° äº’ä¸ç›¸åŒ
  */
 public class Solution46 {
     public static List<List<Integer>> permute(int[] nums) {
@@ -47,8 +47,8 @@ public class Solution46 {
 
 
     /**
-     * ×î¿ìËã·¨
-     * Í¨¹ı½»»»Î»ÖÃÊµÏÖ
+     * æœ€å¿«ç®—æ³•
+     * é€šè¿‡äº¤æ¢ä½ç½®å®ç°
      */
     public List<List<Integer>> permute2(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();

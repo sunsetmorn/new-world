@@ -4,18 +4,18 @@ import java.math.BigDecimal;
 import java.util.*;
 
 /**
- * ����һ���ַ������飬���㽫��ĸ��λ�������һ�𡣿��԰�����˳�򷵻ؽ���б���
- * ��ĸ��λ��������������Դ���ʵ�������ĸ�õ���һ���µ��ʡ�
+ * 给你一个字符串数组，请你将字母异位词组合在一起。可以按任意顺序返回结果列表。
+ * 字母异位词是由重新排列源单词的所有字母得到的一个新单词。
  *
- * ��ʾ��
+ * 提示：
  * 1 <= strs.length <= 104
  * 0 <= strs[i].length <= 100
- * strs[i] ������Сд��ĸ
+ * strs[i] 仅包含小写字母
  */
 
 public class Solution49 {
     /**
-     * ʹ��Map����ȡ��key�Ǿ���������ַ�����ʹ��getOrDefault������������ֵ��������mapתlist����
+     * 使用Map来存取，key是经过排序的字符串，使用getOrDefault方法来处理空值情况，最后map转list返回
      * @param strs
      * @return
      */

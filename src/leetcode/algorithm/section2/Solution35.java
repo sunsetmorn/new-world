@@ -1,8 +1,8 @@
 package leetcode.algorithm.section2;
 
 /**
- * ¸ø¶¨Ò»¸öÅÅÐòÊý×éºÍÒ»¸öÄ¿±êÖµ£¬ÔÚÊý×éÖÐÕÒµ½Ä¿±êÖµ£¬²¢·µ»ØÆäË÷Òý¡£Èç¹ûÄ¿±êÖµ²»´æÔÚÓÚÊý×éÖÐ£¬·µ»ØËü½«»á±»°´Ë³Ðò²åÈëµÄÎ»ÖÃ¡£
- * Çë±ØÐëÊ¹ÓÃÊ±¼ä¸´ÔÓ¶ÈÎª O(log n) µÄËã·¨¡£
+ * ç»™å®šä¸€ä¸ªæŽ’åºæ•°ç»„å’Œä¸€ä¸ªç›®æ ‡å€¼ï¼Œåœ¨æ•°ç»„ä¸­æ‰¾åˆ°ç›®æ ‡å€¼ï¼Œå¹¶è¿”å›žå…¶ç´¢å¼•ã€‚å¦‚æžœç›®æ ‡å€¼ä¸å­˜åœ¨äºŽæ•°ç»„ä¸­ï¼Œè¿”å›žå®ƒå°†ä¼šè¢«æŒ‰é¡ºåºæ’å…¥çš„ä½ç½®ã€‚
+ * è¯·å¿…é¡»ä½¿ç”¨æ—¶é—´å¤æ‚åº¦ä¸º O(log n) çš„ç®—æ³•ã€‚
  */
 public class Solution35 {
 

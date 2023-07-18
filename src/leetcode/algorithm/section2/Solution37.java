@@ -2,25 +2,25 @@ package leetcode.algorithm.section2;
 
 
 /**
- *  ��дһ������ͨ�����ո�������������⡣
- * �����Ľⷨ����ѭ���¹���
- * ����1-9��ÿһ��ֻ�ܳ���һ�Ρ�
- * ����1-9��ÿһ��ֻ�ܳ���һ�Ρ�
- * ����1-9��ÿһ���Դ�ʵ�߷ָ���3x3����ֻ�ܳ���һ�Ρ���
- * �������ֿո��������������֣��հ׸���'.'��ʾ��
+ *  编写一个程序，通过填充空格来解决数独问题。
+ * 数独的解法需遵循如下规则：
+ * 数字1-9在每一行只能出现一次。
+ * 数字1-9在每一列只能出现一次。
+ * 数字1-9在每一个以粗实线分隔的3x3宫内只能出现一次。（
+ * 数独部分空格内已填入了数字，空白格用'.'表示。
  *
- * ��ʾ��
+ * 提示：
  * board.length == 9
  * board[i].length == 9
- * board[i][j] ��һλ���ֻ��� '.'
- * ��Ŀ���� ��֤ ������������һ����
+ * board[i][j] 是一位数字或者 '.'
+ * 题目数据 保证 输入数独仅有一个解
  *
  */
 public class Solution37 {
-    static byte[][] row = new byte[9][9]; //ÿ��1~9�Ƿ���Ա��ù���0û�ù���1�ù���
-    static byte[][] col = new byte[9][9]; //ÿ��1~9�Ƿ���Ա��ù���0û�ù���1�ù���
-    static byte[][] part = new byte[9][9]; //ÿ��������3*3�Ĺ���1~9�Ƿ���Ա��ù���0û�ù���1�ù���
-    static int[] grid = new int[81];   //��¼�ø��ӿ���ѡ������������Ѿ���д���ֵ���ֵΪ������
+    static byte[][] row = new byte[9][9]; //每行1~9是否可以被用过，0没用过，1用过。
+    static byte[][] col = new byte[9][9]; //每列1~9是否可以被用过，0没用过，1用过。
+    static byte[][] part = new byte[9][9]; //每个分区（3*3的宫）1~9是否可以被用过，0没用过，1用过。
+    static int[] grid = new int[81];   //记录该格子可以选择的数字数，已经填写数字的数值为负数。
     static int minOfGrid = 8;
     static int minOfGridLo = -1;
 
@@ -34,8 +34,8 @@ public class Solution37 {
 
 
     /**
-     *  ��ʼ������Ԫ���ȡֵ���� grid
-     *  i,j��Ϊ����ʱ����ʼ��i�к�j��
+     *  初始化各单元格可取值数量 grid
+     *  i,j不为负数时，初始化i行和j列
      */
     public static void initGrid(int i,int j,char[][] board){
        if( i<0 && j<0){
@@ -75,7 +75,7 @@ public class Solution37 {
     }
 
     /**
-     * ����ĳ����Ԫ���ȡֵ����
+     * 重置某个单元格可取值数量
      */
     public static void changeGrid(int i,int j,char[][] board){
         if(board[i][j] == '.'){
@@ -91,7 +91,7 @@ public class Solution37 {
 
 
     /**
-     * ��������ĳ����Ԫ��ֵ�����޸Ķ�Ӧ����������
+     * 给数独的某个单元格赋值，并修改对应的属性数组
      */
     public static void useNum(int i,int j,char[][] board,int flag){
         int k=0;
@@ -113,7 +113,7 @@ public class Solution37 {
     }
 
     /***
-     * ��ȡ��С��grid
+     * 获取最小的grid
      */
     public static void getMin(){
         minOfGrid = 8;
@@ -126,7 +126,7 @@ public class Solution37 {
     }
 
     /**
-     * �������н�����д1���ĵ�Ԫ��
+     * 填满所有仅能填写1个的单元格
      */
     public static void addNum(char[][] board){
         while(minOfGrid==1){
@@ -135,7 +135,7 @@ public class Solution37 {
     }
 
     /**
-     * ������Ψһȡֵʱ���ϳ�����ֵ����������������ֱ���⿪������
+     * 不存在唯一取值时不断尝试填值，错误重置数独，直至解开数独。
      */
     public static void addNum2(char[][] board) {
         int min = minOfGrid;
@@ -158,7 +158,7 @@ public class Solution37 {
     }
 
     /**
-     * �������������ڻָ�����
+     * 复制数独，用于恢复数独
      */
     public static void copy(char[][] a,char[][] b){
         for(int i =0;i<9;i++){
@@ -172,16 +172,16 @@ public class Solution37 {
 //        char[][] a = {{'5','3','.','.','7','.','.','.','.'},{'6','.','.','1','9','5','.','.','.'},{'.','9','8','.','.','.','.','6','.'},{'8','.','.','.','6','.','.','.','3'},{'4','.','.','8','.','3','.','.','1'},{'7','.','.','.','2','.','.','.','6'},{'.','6','.','.','.','.','2','8','.'},{'.','.','.','4','1','9','.','.','5'},{'.','.','.','.','8','.','.','7','9'}};
         char[][] a={{'.','.','9','7','4','8','.','.','.'},{'7','.','.','.','.','.','.','.','.'},{'.','2','.','1','.','9','.','.','.'},{'.','.','7','.','.','.','2','4','.'},{'.','6','4','.','1','.','5','9','.'},{'.','9','8','.','.','.','3','.','.'},{'.','.','.','8','.','3','.','2','.'},{'.','.','.','.','.','.','.','.','6'},{'.','.','.','2','7','5','9','.','.'}};
         solveSudoku(a);
-        System.out.println("������");
+        System.out.println("数独：");
         for (char[] chars : a) {
             for (char aChar : chars) {
-                System.out.print(aChar+"��");
+                System.out.print(aChar+"、");
             }
             System.out.println();
         }
-        System.out.println("����grid��");
+        System.out.println("最终grid：");
         for(int t=0;t<81;t++){
-            System.out.print(grid[t]+"��");
+            System.out.print(grid[t]+"、");
             if(t%9==8){
                 System.out.println();
             }

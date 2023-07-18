@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * n»ÊºóÎÊÌâ ÑÐ¾¿µÄÊÇÈçºÎ½«n¸ö»Êºó·ÅÖÃÔÚn ¡Á nµÄÆåÅÌÉÏ£¬²¢ÇÒÊ¹»Êºó±Ë´ËÖ®¼ä²»ÄÜÏà»¥¹¥»÷¡£
- * ¸øÄãÒ»¸öÕûÊýn£¬·µ»Øn»ÊºóÎÊÌâ²»Í¬µÄ½â¾ö·½°¸µÄÊýÁ¿¡£
+ * nçš‡åŽé—®é¢˜ ç ”ç©¶çš„æ˜¯å¦‚ä½•å°†nä¸ªçš‡åŽæ”¾ç½®åœ¨n Ã— nçš„æ£‹ç›˜ä¸Šï¼Œå¹¶ä¸”ä½¿çš‡åŽå½¼æ­¤ä¹‹é—´ä¸èƒ½ç›¸äº’æ”»å‡»ã€‚
+ * ç»™ä½ ä¸€ä¸ªæ•´æ•°nï¼Œè¿”å›žnçš‡åŽé—®é¢˜ä¸åŒçš„è§£å†³æ–¹æ¡ˆçš„æ•°é‡ã€‚
  * 1 <= n <= 9
  */
 public class Solution52 {

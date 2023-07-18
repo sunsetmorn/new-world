@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ¸øÄãÒ»¸öÕûÊýÊý×é nums £¬ÇëÄãÕÒ³öÒ»¸ö¾ßÓÐ×î´óºÍµÄÁ¬Ðø×ÓÊý×é£¨×ÓÊý×é×îÉÙ°üº¬Ò»¸öÔªËØ£©£¬·µ»ØÆä×î´óºÍ¡£
- * ×ÓÊý×é ÊÇÊý×éÖÐµÄÒ»¸öÁ¬Ðø²¿·Ö¡£
+ * ç»™ä½ ä¸€ä¸ªæ•´æ•°æ•°ç»„ nums ï¼Œè¯·ä½ æ‰¾å‡ºä¸€ä¸ªå…·æœ‰æœ€å¤§å’Œçš„è¿žç»­å­æ•°ç»„ï¼ˆå­æ•°ç»„æœ€å°‘åŒ…å«ä¸€ä¸ªå…ƒç´ ï¼‰ï¼Œè¿”å›žå…¶æœ€å¤§å’Œã€‚
+ * å­æ•°ç»„ æ˜¯æ•°ç»„ä¸­çš„ä¸€ä¸ªè¿žç»­éƒ¨åˆ†ã€‚
  *
- * ÌáÊ¾£º
+ * æç¤ºï¼š
  * 1 <= nums.length <= 105
  * -104 <= nums[i] <= 104
  */
 public class Solution53 {
     public static int maxSubArray(int[] nums) {
-        int max = -10000; //È¡·¶Î§ÄÚ×îÐ¡Êý×Ö
+        int max = -10000; //å–èŒƒå›´å†…æœ€å°æ•°å­—
         int tmp = 0;
         for (int i = 0; i < nums.length; i++) {
             tmp += nums[i];
