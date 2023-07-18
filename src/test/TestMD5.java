@@ -10,18 +10,19 @@ public class TestMD5 {
     public static void main(String[] args) throws Exception{
         String ss = "D7A3A27B2C4809DBC59914158D221385";
         String s2 = "971A2DDD636E0A264F68AD8943081CC2";
-        String s3 = "";
+        String s3 = "useraccept:123456";
 
         try {
-            byte[] bytes = MessageDigest.getInstance("MD5").digest(s3.getBytes("UTF-8"));
+            byte[] bytes = MessageDigest.getInstance("MD5").digest(s3.getBytes("gb2312"));
             StringBuilder sign = new StringBuilder();
             for (byte b : bytes) {
                 String hex = Integer.toHexString(b & 0xFF);
                 if (hex.length() == 1) {
                     sign.append("0");
                 }
-                sign.append(hex.toUpperCase());
+                sign.append(hex);
             }
+            //409b8350d8924a82a30d305b21b4302e
             String s = sign.toString();
             System.out.println(s);
             System.out.println(new Date());
