@@ -16,6 +16,8 @@ public class Solution84 {
     /**
      * 单调栈
      *
+     * 栈内元素从小到大单调递增
+     *
      * @param heights
      * @return
      */
@@ -24,6 +26,12 @@ public class Solution84 {
         int[] left = new int[n];
         int[] right = new int[n];
 
+        /**
+         * 经过比较，比当前元素大的元素出栈，最后当前元素进栈。故前一个元素必定在栈内，
+         * 并得到左边最进的比当前小的位置。
+         * 同法取到右边最近比当前值小的位置。
+         * 可以依次计算出每个柱体的宽度从而进行比较。
+         */
         Deque<Integer> stack = new ArrayDeque<>();
         for (int i = 0; i < n; i++) {
             while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
