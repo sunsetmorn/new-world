@@ -8,8 +8,8 @@ package leetcode.algorithm.section4;
  * 所有左子树和右子树自身必须也是二叉搜索树。
  *
  * 提示：
- * 树中节点数目范围在[1, 104] 内
- * -231 <= Node.val <= 231 - 1
+ * 树中节点数目范围在[1, 10000] 内
+ * -2^31 <= Node.val <= 2^31 - 1
  */
 public class Solution98 {
     public static boolean isValidBST(TreeNode root) {
