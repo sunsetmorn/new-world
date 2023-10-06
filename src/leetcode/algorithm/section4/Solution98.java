@@ -1,5 +1,7 @@
 package leetcode.algorithm.section4;
 
+import leetcode.common.TreeNode;
+
 /**
  * 给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。
  * 有效 二叉搜索树定义如下：
@@ -38,19 +40,6 @@ public class Solution98 {
             }
         }
         return true;
-    }
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 
     public static void main(String[] args) {
