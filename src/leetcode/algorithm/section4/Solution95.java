@@ -7,7 +7,8 @@ package leetcode.algorithm.section4;
  * @date 2023年09月22日
  */
 
-import java.util.ArrayList;
+import leetcode.common.TreeNode;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -55,17 +56,5 @@ public class Solution95 {
             }
         }
         return allTrees;
-    }
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 }
