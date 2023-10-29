@@ -24,7 +24,6 @@ public class Solution131 {
     public List<List<String>> partition(String s) {
         List<List<String>> ret = new ArrayList<>();
         List<List<String>> tmp = new ArrayList<>();
-        int[][] t = new int[s.length()][s.length()];
         List<String> list = new ArrayList<>();
         list.add(s.substring(0, 1));
         ret.add(list);
