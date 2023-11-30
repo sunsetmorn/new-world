@@ -1,41 +1,37 @@
 package leetcode.common;
 
+/**
+ * KMPç®—æ³•
+ */
 public class KMPAlgorithm {
 
+
     /**
-     *  »ñÈ¡nextÊı×é
-     *  Ä£Ê½´® t µÄÃ¿¸öÔªËØ t[j]£¬¶¼´æÔÚÒ»¸öÊµÊı k £¬Ê¹µÃÄ£Ê½´® t ¿ªÍ·µÄ k ¸ö×Ö·û£¨t[0] t [1]¡­t [k-1]£©ÒÀ´ÎÓë t [j]
-     *  Ç°ÃæµÄ k£¨t [j-k] t [j-k+1]¡­t [j-1]£¬ÕâÀïµÚÒ»¸ö×Ö·û t [j-k] ×î¶à´Ó t [1] ¿ªÊ¼£¬ËùÒÔ k < [j]£©¸ö×Ö·ûÏàÍ¬¡£
-     *  Èç¹ûÕâÑùµÄ k ÓĞ¶à¸ö£¬ÔòÈ¡×î´óµÄÒ»¸ö
-     *
+     * è·å–nextæ•°ç»„
+     * æ¨¡å¼ä¸² t çš„æ¯ä¸ªå…ƒç´  t[j]ï¼Œéƒ½å­˜åœ¨ä¸€ä¸ªå®æ•° k ï¼Œä½¿å¾—æ¨¡å¼ä¸² t å¼€å¤´çš„ k ä¸ªå­—ç¬¦ï¼ˆt[0] t [1]â€¦t [k-1]ï¼‰ä¾æ¬¡ä¸ t [j]
+     * å‰é¢çš„ kï¼ˆt [j-k] t [j-k+1]â€¦t [j-1]ï¼Œè¿™é‡Œç¬¬ä¸€ä¸ªå­—ç¬¦ t [j-k] æœ€å¤šä» t [1] å¼€å§‹ï¼Œæ‰€ä»¥ k < [j]ï¼‰ä¸ªå­—ç¬¦ç›¸åŒã€‚
+     * å¦‚æœè¿™æ ·çš„ k æœ‰å¤šä¸ªï¼Œåˆ™å–æœ€å¤§çš„ä¸€ä¸ª
      */
-    public static int[] getNext(String a){
-        int next[] = new int[a.length()];
-        int m =0,n=-1;
-        next [0]=-1;
-        while(m<a.length()-1){
-            /**
-             * n == -1±íÊ¾Ê×´Î½øÈë£¬ĞèÒª¼ÓÒ»Î»¿ªÊ¼¼ÆËã¡£
-             * a.charAt(m) == a.charAt(n)±íÊ¾Ç°ºóÆ¥Åä£¬´ËÊ±m½ÚµãµÄnextµÄÖµµÈÓÚn½ÚµãnextµÄÖµ¡£
-             * Ô­ÒòÊÇ£ºnext[0]=-1,Èç¹ûa.charAt(m) == a.charAt(n)²»µÈn»áÒ»Ö±ÔÚ0ºÍ-1Ö®¼ä±ä»¯£¬Ö±µ½ÏàµÈ²Å»áÀÛ¼Ó¡£
-             * ÏàµÈÖ®ºómºÍnÍ¬Ê±Ôö¼Ó£¬Èç¹û»¹ÏàµÈÔò·ûºÏnextÖµµÄ¶¨Òå£¬Ò»Ö±»áÀÛ¼Ó¡£
-             * Ö±µ½Ôö¼ÓÒ»´ÎÖ®ºó²»ÔÙÏàµÈ£¬´ËÊ±¼ÆËãn=next[n],´ËÊ±nµÄÖµ»á±ä»¯£¨±äĞ¡£©£¬Èç¹ûnext[n]²»Îª0£¬ÄÇÃ´charAt(next[n])=charAt(n)£¬´ËÊ±±ä»¯ºó
-             * ÅĞ¶Ï»¹²»³ÉÁ¢£¬n»á¼ÌĞø±ä»¯£¬Ö±µ½n»Øµ½-1£¬¼´ÆğµãÎ»ÖÃ£¬ÖØĞÂ¿ªÊ¼´ÓÍ·Æ¥Åä£¬ÕâÒ²·ûºÏnextµÄ¶¨Òå¡£
-             */
-            if (n == -1 || a.charAt(m) == a.charAt(n)) {
-                m++;
-                n++;
-                next[m]=n;
-            }else{
-                n = next[n];  //
+    public static int[] getNext(String a) {
+        int[] next = new int[a.length()];
+        int m = 2, n = 1;
+        next[0] = -1;
+        next[1] = 0;
+        while (m < a.length() - 1) {
+            if (n != 0 && a.charAt(m) == a.charAt(next[n])) {
+                next[m++] = next[n++];
+            } else if (n == 0) {
+                next[m++] = 0;
+            } else {
+                n = next[n];
             }
         }
         return next;
     }
 
     public static void main(String[] args) {
-        String a= "anjfbanhsbk";
-        int[] b =getNext(a);
+        String a = "anafbanhsbk";
+        int[] b = getNext(a);
         System.out.println("61544");
     }
 }
