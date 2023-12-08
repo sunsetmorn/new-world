@@ -7,6 +7,8 @@ package leetcode.algorithm.section4;
  * @date 2023年09月15日
  */
 
+import leetcode.common.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,22 +45,6 @@ public class Solution86 {
     }
 
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public static void main(String[] args) {
         int[] a = {1, 0, 7, 9, 2, 3, 10};
